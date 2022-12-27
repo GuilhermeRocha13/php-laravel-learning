@@ -24,14 +24,14 @@ use Illuminate\Support\Facades\Route;
 
  Route::get('/contato', 'ContatoController@Contato');
 
- Route::get(
+/*  Route::get(
     '/contato/{nome}/{categoria_id}' , //
     function (
         string $nome = 'Desconhecido',
         int $categoria_id = 1
-    ) {
+    ) {                                                         //teste de rota com parametro
         echo "Estamos aqui: $nome - $categoria_id";
     }
-) ->where('categoria_id' , '[0-9]+'); where('nome' , '[A-Z a-z]');
+) ->where('categoria_id' , '[0-9]+') ->where('nome' , '[A-Z a-z]+'); */
 
 
