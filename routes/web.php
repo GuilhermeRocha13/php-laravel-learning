@@ -19,10 +19,15 @@ use Illuminate\Support\Facades\Route;
  */
 
  Route::get('/', 'PrincipalController@Principal');
-
  Route::get('/sobre-nos', 'SobreNosController@SobreNos');
-
  Route::get('/contato', 'ContatoController@Contato');
+ Route::get('/login', function() { return 'Login'; });
+
+ Route::prefix('/app')->group(function() {
+    Route::get('/Clientes', function() { return 'Clientes'; });
+    Route::get('/Fornecedores', function() { return 'Fornecedores'; });
+    Route::get('/Produtos', function() { return 'Produtos'; });
+ });
 
 /*  Route::get(
     '/contato/{nome}/{categoria_id}' , //
