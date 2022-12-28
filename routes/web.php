@@ -18,16 +18,22 @@ use Illuminate\Support\Facades\Route;
 });
  */
 
- Route::get('/', 'PrincipalController@Principal');
- Route::get('/sobre-nos', 'SobreNosController@SobreNos');
- Route::get('/contato', 'ContatoController@Contato');
- Route::get('/login', function() { return 'Login'; });
+ Route::get('/', 'PrincipalController@Principal')->name('site.index');
+ Route::get('/sobre-nos', 'SobreNosController@SobreNos')->name('site.sobrenos');
+ Route::get('/contato', 'ContatoController@Contato')->name('site.contato');
+ Route::get('/login', function() { return 'Login'; })->name('site.login');
 
  Route::prefix('/app')->group(function() {
-    Route::get('/Clientes', function() { return 'Clientes'; });
-    Route::get('/Fornecedores', function() { return 'Fornecedores'; });
-    Route::get('/Produtos', function() { return 'Produtos'; });
+    Route::get('/Clientes', function() { return 'Clientes'; })->name('app.clientes');
+    Route::get('/Fornecedores', function() { return 'Fornecedores'; })->name('app.fornecedores');
+    Route::get('/Produtos', function() { return 'Produtos'; })->name('app.produtos');
  });
+
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
+
+ Route::fallback(function(){
+    echo 'Rota inexistente. <a href="'.route('site.index').'">clique aqui</a> para ir para página inicial';
+ }); 
 
 /*  Route::get(
     '/contato/{nome}/{categoria_id}' , //
@@ -38,5 +44,7 @@ use Illuminate\Support\Facades\Route;
         echo "Estamos aqui: $nome - $categoria_id";
     }
 ) ->where('categoria_id' , '[0-9]+') ->where('nome' , '[A-Z a-z]+'); */
+
+
 
 
