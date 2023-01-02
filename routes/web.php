@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
  Route::prefix('/app')->group(function() {
     Route::get('/Clientes', function() { return 'Clientes'; })->name('app.clientes');
-    Route::get('/Fornecedores', 'FornecedorController@index')->name('app.fornecedores');
+    //Route::get('/Fornecedores', 'FornecedorController@index')->name('app.fornecedores');
     Route::get('/Produtos', function() { return 'Produtos'; })->name('app.produtos');
  });
 
