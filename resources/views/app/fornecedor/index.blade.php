@@ -14,4 +14,5 @@
 
 @endphp
 
-{{ $fornecedores }}
+@dd($fornecedores)
+
