@@ -1,3 +1,5 @@
+@section('titulo', $titulo)
+
 @extends('site.layout.basico')
 
 @section('conteudo')
