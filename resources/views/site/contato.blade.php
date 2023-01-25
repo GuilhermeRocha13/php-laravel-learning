@@ -3,15 +3,14 @@
     <head>
         <title>Super Gestão - Contato</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href= " {{asset('css/estilo_basico.css')}}">
-      
+        <link rel="stylesheet" href="{{ asset('css/estilo_basico.css') }}">
     </head>
 
     <body>
         <div class="topo">
 
             <div class="logo">
-                <img src="i{{ asset('img/logo.png')}}">
+                <img src="{{ asset('img/logo.png') }}">
             </div>
 
             <div class="menu">
@@ -49,7 +48,7 @@
                         <button type="submit" class="borda-preta">ENVIAR</button>
                     </form>
                 </div>
-            </div>  
+            </div>
         </div>
 
         <div class="rodape">
@@ -57,7 +56,7 @@
                 <h2>Redes sociais</h2>
                 <img src="{{ asset('img/facebook.png') }}">
                 <img src="{{ asset('img/linkedin.png') }}">
-                <img src="{{ asset('img/youtube.png')}}">
+                <img src="{{ asset('img/youtube.png') }}">
             </div>
             <div class="area-contato">
                 <h2>Contato</h2>

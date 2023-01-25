@@ -12,39 +12,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/* Route::get('/', function () {
-    return 'a';
+/*
+Route::get('/', function () {
+    return 'Olá, seja bem vindo ao curso!';
 });
- */
+*/
 
- Route::get('/', 'PrincipalController@Principal')->name('site.index');
- Route::get('/sobre-nos', 'SobreNosController@SobreNos')->name('site.sobrenos');
- Route::get('/contato', 'ContatoController@Contato')->name('site.contato');
- Route::get('/login', function() { return 'Login'; })->name('site.login');
+Route::get('/', 'PrincipalController@principal')->name('site.index');
+Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
+Route::get('/contato', 'ContatoController@contato')->name('site.contato');
+Route::get('/login', function(){return 'Login';})->name('site.login');
 
- Route::prefix('/app')->group(function() {
-    Route::get('/Clientes', function() { return 'Clientes'; })->name('app.clientes');
-    //Route::get('/Fornecedores', 'FornecedorController@index')->name('app.fornecedores');
-    Route::get('/Produtos', function() { return 'Produtos'; })->name('app.produtos');
- });
+Route::prefix('/app')->group(function() {
+    Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes');
+    Route::get('/fornecedores', 'FornecedorController@index')->name('app.fornecedores');
+    Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
+});
 
-Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
 
- Route::fallback(function(){
-    echo 'Rota inexistente. <a href="'.route('site.index').'">clique aqui</a> para ir para página inicial';
- }); 
-
-/*  Route::get(
-    '/contato/{nome}/{categoria_id}' , //
-    function (
-        string $nome = 'Desconhecido',
-        int $categoria_id = 1
-    ) {                                                         //teste de rota com parametro
-        echo "Estamos aqui: $nome - $categoria_id";
-    }
-) ->where('categoria_id' , '[0-9]+') ->where('nome' , '[A-Z a-z]+'); */
-
-
-
-
+Route::fallback(function() {
+    echo 'A rota acessada não existe. <a href="'.route('site.index').'">clique aqui</a> para ir para página inicial';
+});

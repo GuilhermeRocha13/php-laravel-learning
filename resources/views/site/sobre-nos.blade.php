@@ -3,7 +3,7 @@
     <head>
         <title>Super Gestão - Sobre Nós</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href= " {{asset('css/estilo_basico.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/estilo_basico.css') }}">
     </head>
 
     <body>
@@ -30,7 +30,7 @@
             <div class="informacao-pagina">
                 <p>O Super Gestão é o sistema online de controle administrativo que pode transformar e potencializar os negócios da sua empresa.</p>
                 <p>Desenvolvido com a mais alta tecnologia para você cuidar do que é mais importante, seus negócios!</p>
-            </div>  
+            </div>
         </div>
 
         <div class="rodape">

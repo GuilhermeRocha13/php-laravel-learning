@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 class TesteController extends Controller
 {
-    public function teste(int $p1, int $p2){
+    public function teste(int $p1, int $p2) {
+        // echo "A soma $p1 + $p2 é: ".($p1+$p2);
 
-        //echo "jesus é totalmente poderoso $p1, $p2";
+        // return view('site.teste', ['p1' => $p1, 'p2' => $p2]); //array associativo
 
-        //return view('site.teste', compact('p1', 'p2'));  No compact as variaveis são armazenadas nessa função, é a forma mais enxuta 
+        // return view('site.teste', compact('p1', 'p2')); //compact
 
-        return view('site.teste')->with('p1', $p1) ->with('p2', $p2);    //Nessa forma terá que puxar essa função para cada variavel
-
+        return view('site.teste')->with('xyz', $p1)->with('zzz', $p2); //with()
     }
 }
